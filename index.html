@@ -1,0 +1,136 @@
+<!doctype html> 
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Home - Vijayalakshmi N</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Neon blue glow effect for Quick Info card */
+    .card {
+      transition: box-shadow 0.4s ease-in-out, border 0.4s ease-in-out;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 10px #00bfff,
+                  0 0 20px #00bfff,
+                  0 0 40px #00bfff,
+                  0 0 80px #00bfff;
+      border: 1px solid #00bfff;
+    }
+
+    /* Glowing circular profile picture */
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px #00bfff,
+                  0 0 40px #00bfff,
+                  0 0 60px #00bfff;
+      animation: glowPulse 2s infinite alternate;
+      border: 3px solid #00bfff;
+    }
+
+    @keyframes glowPulse {
+      from {
+        box-shadow: 0 0 15px #00bfff,
+                    0 0 30px #00bfff,
+                    0 0 45px #00bfff;
+      }
+      to {
+        box-shadow: 0 0 30px #00bfff,
+                    0 0 60px #00bfff,
+                    0 0 90px #00bfff;
+      }
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+
+    /* Pink neon for name */
+    .neon {
+      color: #ff69b4; /* hot pink */
+      text-shadow: 0 0 10px #ff69b4,
+                   0 0 20px #ff69b4,
+                   0 0 30px #ff69b4,
+                   0 0 40px #ff69b4;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="neon">V</span> N</div>
+      <nav id="navLinks" class="nav-links" style="display:flex">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="navToggle" style="background:transparent;border:0;color:var(--accent1);font-weight:700;display:none">Menu</button>
+    </div>
+  </header>
+
+  <main class="container">
+    
+<section class="hero fade-up">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="avatar">
+        <img src="https://i.ibb.co/9m5W1g0N/viji.jpg" alt="Vijayalakshmi N" />
+      </div>
+      
+      <h1>Hi, I'm <span class="">Vijayalakshmi N</span></h1>
+      <p class="meta">A Computer Science and Engineering Student · UI/UX Enthusiast</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="projects.html">View My Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="card fade-up fade-delay-2" style="margin-top:18px">
+  <div class="section-title"><h2>Quick Info</h2></div>
+  <div class="grid">
+    <div>
+      <p class="meta"><strong>Email:</strong> <a href="mailto:vijayalakshminagarajan1106@gmail.com">vijayalakshminagarajan1106@gmail.com</a></p>
+      <p class="meta"><strong>Phone:</strong> +91 9025229002</p>
+      <p class="meta"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vijayalakshmi-nagarajan-7168362a1">profile</a></p>
+      <p class="meta"><strong>GitHub:</strong> <a href="https://github.com/viji116">viji116</a></p>
+    </div>
+    <div>
+      <h3 class="meta">Education</h3>
+      <p>B.E. in Computer Science and Engineering<br><small class="meta">Kathir College of Engineering, Coimbatore | 2022 – 2026</small></p>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2025 Vijayalakshmi N · All rights reserved.</div>
+      <div class="meta declaration">I hereby declare that the above mentioned information are true to the best of my knowledge</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
