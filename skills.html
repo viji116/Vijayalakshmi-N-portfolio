@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Skills - Vijayalakshmi N</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Layout fix for skills section */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      color: var(--accent1, #00ffff);
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .list-grid.single-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .item-card.skill-category {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 20px 30px;
+      min-width: 250px;
+      flex: 1 1 300px;
+      max-width: 320px;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .item-card.skill-category:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    }
+
+    .item-card h3 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .skills .badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #00ffff, #ff00ff);
+      color: #000;
+      border-radius: 25px;
+      padding: 8px 16px;
+      margin: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-shadow: none;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .list-grid.single-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="neon">Vijayalakshmi</span> N</div>
+      <nav id="navLinks" class="nav-links" style="display:flex">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="certifications.html">Certifications</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button id="navToggle" style="background:transparent;border:0;color:var(--accent1);font-weight:700;display:none">Menu</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card fade-up">
+      <div class="section-title"><h2>Skills</h2></div>
+
+      <div class="list-grid single-row">
+        <div class="item-card skill-category">
+          <h3>Design Tools</h3>
+          <div class="skills">
+            <span class="badge">Figma</span>
+            <span class="badge">Canva</span>
+          </div>
+        </div>
+
+        <div class="item-card skill-category">
+          <h3>Programming</h3>
+          <div class="skills">
+            <span class="badge">Python</span>
+            <span class="badge">SQL</span>
+          </div>
+        </div>
+
+        <div class="item-card skill-category">
+          <h3>Web Development</h3>
+          <div class="skills">
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2025 Vijayalakshmi N · All rights reserved.</div>
+      <div class="meta declaration">I hereby declare that the above mentioned information are true to the best of my knowledge</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

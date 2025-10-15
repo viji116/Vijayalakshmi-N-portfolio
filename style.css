@@ -1,0 +1,175 @@
+/* assets/css/style.css - Neon blue & pink theme */
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif}
+:root{
+  --bg:#0f0f1a;--card:#111126;--accent1:#00ffff;--accent2:#ff0080;--muted:#bfc7d6;--text-color:#fff
+}
+
+body{background:var(--bg);color:var(--text-color);line-height:1.6}
+
+/* Animated rotating conic-gradient background (behind content) */
+:root{
+  --bg-anim-opacity:0.08; /* subtle overlay opacity */
+  --bg-anim-blur:64px;
+  --bg-anim-duration:60s; /* slow rotation */
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:-30% -30% -30% -30%;
+  z-index:-2;
+  pointer-events:none;
+  filter:blur(var(--bg-anim-blur));
+  opacity:var(--bg-anim-opacity);
+  background: conic-gradient(from 0deg at 50% 50%, rgba(0,255,255,0.12), rgba(255,0,128,0.12), rgba(0,255,255,0.08), rgba(255,0,128,0.08));
+  transform-origin:center;
+  animation: rotate-bg var(--bg-anim-duration) linear infinite;
+  transition:opacity .3s linear;
+}
+
+@keyframes rotate-bg{
+  to{transform:rotate(360deg)}
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce){
+  body::before{
+    animation:none !important;
+    opacity:0.06;
+    transform:none !important;
+  }
+}
+
+/* Respect reduced motion for decorative neon ring */
+@media (prefers-reduced-motion: reduce){
+  .neon-ring::before,
+  .neon-ring::after{
+    animation: none !important;
+    transition: none !important;
+    filter: none !important;
+  }
+}
+
+.container{width:90%;max-width:1100px;margin:0 auto;padding:40px 0}
+a{color:inherit;text-decoration:none}
+header{background:transparent;position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(255,0,128,0.06);backdrop-filter: blur(6px)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{font-weight:700;font-size:1.05rem}
+.brand .neon{color:var(--accent2);text-shadow:0 0 6px var(--accent2),0 0 12px var(--accent1)}
+.nav-links{display:flex;gap:14px;align-items:center}
+.nav-links a{padding:8px 12px;border-radius:10px;transition:all .25s}
+.nav-links a:hover{box-shadow:0 0 16px var(--accent1),0 0 12px var(--accent2);transform:translateY(-4px)}
+
+/* accessibility helper */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hero{padding:60px 0;text-align:center}
+.hero h1{font-size:2.2rem;margin-bottom:8px}
+
+/* Avatar in hero */
+.hero-inner{display:flex;align-items:center;gap:18px;justify-content:center}
+.hero .avatar{width:180px;height:180px;border-radius:999px;overflow:hidden;flex:0 0 auto;box-shadow:0 16px 44px rgba(0,0,0,0.55);position:relative}
+.hero .avatar img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;border-radius:999px;transform:none}
+
+/* Neon animated ring around avatar */
+.neon-ring{padding:0;border-radius:999px;position:relative;display:inline-block}
+.neon-ring::before{content:"";position:absolute;inset:-16px;border-radius:999px;background:conic-gradient(from 0deg, rgba(0,255,255,0.95), rgba(255,0,128,0.95), rgba(0,255,255,0.7));filter: blur(18px) hue-rotate(0deg);z-index:-1;opacity:1;mix-blend-mode:screen;animation:rotate-neon 8s linear infinite, neon-glow 2.8s ease-in-out infinite, ring-breathe 3s ease-in-out infinite, neon-color 6s linear infinite;transform-origin:center}
+.neon-ring::after{content:"";position:absolute;inset:-22px;border-radius:999px;background:radial-gradient(circle at 50% 50%, rgba(0,255,255,0.12), rgba(255,0,128,0.08) 50%, transparent 70%);z-index:-2;filter:blur(6px)}
+
+@keyframes rotate-neon{to{transform:rotate(360deg)}}
+@keyframes neon-glow{0%{opacity:.45;filter:blur(6px)}50%{opacity:1;filter:blur(18px)}100%{opacity:.45;filter:blur(6px)}}
+@keyframes ring-breathe{0%{transform:scale(1);opacity:0.9}50%{transform:scale(1.04);opacity:1}100%{transform:scale(1);opacity:0.9}}
+@keyframes neon-color{0%{filter: blur(18px) hue-rotate(0deg)}50%{filter: blur(18px) hue-rotate(180deg)}100%{filter: blur(18px) hue-rotate(360deg)}}
+
+/* Responsive avatar sizing */
+@media (max-width: 700px){
+  .hero .avatar{width:120px;height:120px}
+  .neon-ring::before{inset:-6px}
+  .neon-ring::after{inset:-10px}
+}
+@keyframes floatY{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+.btn{display:inline-block;padding:10px 18px;border-radius:30px;font-weight:600;margin-right:10px}
+.btn-primary{background:var(--accent2);color:#fff;box-shadow:0 0 12px var(--accent2)}
+.btn-outline{border:2px solid var(--accent1);color:var(--accent1);padding:8px 16px;border-radius:24px}
+
+/* Cards & sections */
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.section-title h2{color:var(--accent1);text-shadow:0 0 6px var(--accent1)}
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 0 12px rgba(0,255,255,0.06)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:800px){.grid{grid-template-columns:1fr} .nav-links{display:none} header{padding:8px}}
+
+/* Skill badges */
+.skills{display:flex;flex-wrap:wrap;gap:10px}
+.badge{padding:8px 12px;border-radius:999px;background:rgba(0,255,255,0.04);color:var(--accent1);box-shadow:0 0 10px rgba(0,255,255,0.04);font-weight:600}
+.badge:hover{transform:scale(1.05);box-shadow:0 0 20px var(--accent2),0 0 30px var(--accent1)}
+
+/* Projects & experience hover */
+.project, .exp{transition:transform .25s,box-shadow .25s}
+.project:hover, .exp:hover{transform:translateY(-6px);box-shadow:0 0 20px var(--accent1),0 0 30px var(--accent2)}
+
+/* List grid and item cards for projects/experience/certifications */
+.list-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:800px){.list-grid{grid-template-columns:1fr}}
+.item-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);box-shadow:0 6px 18px rgba(0,0,0,0.35);transition:transform .25s,box-shadow .25s}
+.item-card:hover{transform:translateY(-6px);box-shadow:0 0 18px var(--accent1),0 0 28px var(--accent2)}
+.item-card h3{margin-bottom:8px}
+.item-card .meta{margin-bottom:8px}
+.skill-category h3{color:var(--accent2)}
+.skill-category .skills{margin-top:6px}
+.contact-item{display:flex;align-items:center;gap:10px}
+.contact-icon{display:inline-flex;align-items:center;justify-content:center;color:var(--accent1);min-width:22px}
+.contact-item a{color:var(--accent1)}
+
+/* Single-row horizontal skills list */
+.list-grid.single-row{display:flex;flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch;gap:12px}
+.list-grid.single-row .item-card{min-width:220px;flex:0 0 auto}
+.list-grid.single-row::-webkit-scrollbar{height:8px}
+.list-grid.single-row::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.06);border-radius:8px}
+
+/* Entrance animations for skills row and cards */
+.list-grid.single-row{opacity:0;transform:translateY(10px);animation:row-enter .7s ease forwards;animation-delay:.12s}
+.list-grid.single-row .item-card{opacity:0;transform:translateY(8px);animation:card-enter .6s cubic-bezier(.2,.8,.2,1) forwards}
+.list-grid.single-row .item-card:nth-child(1){animation-delay:.22s}
+.list-grid.single-row .item-card:nth-child(2){animation-delay:.32s}
+.list-grid.single-row .item-card:nth-child(3){animation-delay:.42s}
+.list-grid.single-row .item-card:nth-child(4){animation-delay:.52s}
+.list-grid.single-row .item-card:nth-child(5){animation-delay:.62s}
+.list-grid.single-row .item-card:nth-child(6){animation-delay:.72s}
+
+@keyframes row-enter{to{opacity:1;transform:translateY(0)}}
+@keyframes card-enter{to{opacity:1;transform:none}}
+
+/* Email icon entrance (one-time pop for contact page) */
+.contact-item.email .contact-icon{transform-origin:center;opacity:0;animation:email-pop .8s cubic-bezier(.2,.9,.3,1) forwards}
+@keyframes email-pop{
+  0%{
+    transform:scale(.85);
+    opacity:0;
+  }
+  60%{
+    transform:scale(1.08);
+    opacity:1;
+  }
+  100%{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+/* Footer */
+footer{border-top:1px solid rgba(255,0,128,0.06);padding:24px 0;text-align:center;color:var(--muted);font-size:0.95rem}
+.declaration{margin-top:8px;color:var(--muted);font-size:0.9rem;line-height:1.4}
+
+/* Contact form */
+.form-row{display:flex;gap:12px}
+.form-row .col{flex:1}
+input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:#fff}
+textarea{min-height:120px;resize:vertical}
+.submit{background:var(--accent1);color:#001;padding:10px 16px;border-radius:8px;border:none;font-weight:700}
+
+/* subtle animations */
+.fade-up{opacity:0;transform:translateY(18px);animation:fadeInUp .75s forwards}
+.fade-delay-1{animation-delay:.15s}.fade-delay-2{animation-delay:.3s}.fade-delay-3{animation-delay:.45s}
+@keyframes fadeInUp{to{opacity:1;transform:none}}
+
+/* small utilities */
+.meta{color:var(--muted);font-size:0.95rem;margin-bottom:8px}
