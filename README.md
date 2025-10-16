@@ -2,8 +2,7 @@
 🌐 Live Demo
 
 🔗 View Portfolio
- <!-- Replace this # with your live GitHub Pages / Netlify / Vercel link -->
-
+ https://viji116.github.io/Vijayalakshmi-N-portfolio/
  # About
 
 This is my personal portfolio website designed and developed by me — Vijayalakshmi N, a passionate Computer Science Engineering student who loves web design, UI/UX, and creative development.
