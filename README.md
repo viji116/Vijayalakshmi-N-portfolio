@@ -35,7 +35,8 @@ The portfolio showcases my skills, projects, certifications, and contact details
 📧 Email: vijayalakshminagarajan1106@gmail.com
 
 💼 LinkedIn: [https://www.linkedin.com/in/vijayalakshmi-nagarajan-7168362a1]
-🌍 Portfolio: [Your Live Link Once Deployed]
+
+🌍 Portfolio: [ https://viji116.github.io/Vijayalakshmi-N-portfolio/]
 
 # Credits
 
